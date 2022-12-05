@@ -1,0 +1,11 @@
+.header {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
