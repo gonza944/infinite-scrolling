@@ -1,13 +1,7 @@
 import { createApi } from "unsplash-js";
-import { Errors } from "unsplash-js/dist/helpers/errors";
-import { Random } from "unsplash-js/dist/methods/photos/types";
 import Heading from "../components/heading";
 import InfiniteScrolling from "../components/infinite-scrolling";
-
-export type useGetImageReturnProps = {
-  images?: Random;
-  error?: Errors;
-};
+import { useGetImageReturnProps } from "./api/get-images";
 
 export default function Home({ images, error }: useGetImageReturnProps) {
   return (
@@ -25,7 +19,7 @@ export const getStaticProps = async () => {
     accessKey: "ZgRP4uDjKn-YfrDVDKjqWC8tRCaX423xdrus2t2jE1Q",
   });
 
-  const data = await unsplashClient.photos.getRandom(undefined);
+  const data = await unsplashClient.photos.getRandom({ count: 20 });
 
   return {
     props: {
