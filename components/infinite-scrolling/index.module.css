@@ -1,4 +1,8 @@
 .mainWrapper {
-    display: flex;
-    flex-direction: column;
-}
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 500px);
+    gap: 10px;
+
+  }
+
